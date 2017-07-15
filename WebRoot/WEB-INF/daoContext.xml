@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<!-- 并设置连接数据库的驱动、URL、用户名、密码，
+	连接池最大连接数、最小连接数、初始连接数等参数  -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close"
+		p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://localhost:3306/weatherPool"
+		p:user="root"
+		p:password="325413"
+		p:maxPoolSize="200"
+		p:minPoolSize="2"
+		p:initialPoolSize="2"
+		p:maxIdleTime="20"/>
+		
+	<!-- 定义Hibernate的SessionFactory，并依赖注入数据源，注入上面定义的dataSource -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		<!-- annotatedClasses属性用于列出全部持久化类 -->
+		<property name="annotatedClasses">
+			<list>
+				<!-- 以下用来列出Hibernate的持久化类 -->
+				<value>domain.Area</value>
+				<value>domain.Stations</value>
+				<value>domain.Role</value>
+				<value>domain.Permissions</value>
+				<value>domain.User</value>
+				<value>domain.Liaisons</value>
+				<value>domain.LiaisonUnit</value>
+				<value>domain.Permissions</value>
+				<value>domain.Vulnerable</value>
+				<value>domain.HourWeather</value>
+				<value>domain.WarnStrategy</value>
+				<value>domain.Warn</value>
+				<value>domain.Product</value>
+				<value>domain.BasicResource</value>
+				<value>domain.SystemInfo</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 指定数据库方言、是否自动建表、是否生成SQL语句等 	-->
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=false
+				hibernate.format_sql=false
+			</value>
+		</property>
+	</bean>
+	
+<!-- 配置DAO组件的模板 -->
+<bean id="daoTemplate" abstract="true" lazy-init="true"
+	p:sessionFactory-ref="sessionFactory"/>
+<bean id="areaDao"
+	class="daoImpl.AreaDaoImpl"
+	parent="daoTemplate"/>	
+<bean id="stationDao"
+	class="daoImpl.StationDaoImpl"
+	parent="daoTemplate"/>		
+<bean id="roleDao"
+	class="daoImpl.RoleDaoImpl"
+	parent="daoTemplate"/>		
+<bean id="liaisonsDao"
+	class="daoImpl.LiaisonsDaoImpl"
+	parent="daoTemplate"/>	
+<bean id="liaisonUnitDao"
+	class="daoImpl.LiaisonUnitDaoImpl"
+	parent="daoTemplate"/>			
+<bean id="permissionDao"
+	class="daoImpl.PermissionDaoImpl"
+	parent="daoTemplate"/>	
+<bean id="userDao"
+	class="daoImpl.UserDaoImpl"
+	parent="daoTemplate"/>			
+<bean id="vulnerableDao"
+    class="daoImpl.VulnerableDaoImpl"
+    parent="daoTemplate"/>
+<bean id="hourWeatherDao"
+    class="daoImpl.HourWeatherDaoImpl"
+    parent="daoTemplate"/>
+<bean id="warnStrategyDao"
+    class="daoImpl.WarnStrategyDaoImpl"
+    parent="daoTemplate"/>
+<bean id="warnDao"
+    class="daoImpl.WarnDaoImpl"
+    parent="daoTemplate"/>
+<bean id="productDao"
+    class="daoImpl.ProductDaoImpl"
+    parent="daoTemplate"/>
+<bean id="basicResourceDao"
+    class="daoImpl.BasicResourceDaoImpl"
+    parent="daoTemplate"/>   
+<bean id="systemDao"
+    class="daoImpl.SystemDaoImpl"
+    parent="daoTemplate"/>             
+</beans>
+	
