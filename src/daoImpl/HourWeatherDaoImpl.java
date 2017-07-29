@@ -99,12 +99,12 @@ public class HourWeatherDaoImpl extends BaseDaoImpl<HourWeather> implements Hour
 	}
 //获取总记录条数
 	public long getItemSize(String areaCode,Timestamp stamp){
-		 String sql=" select count(*) from Hour_Weather where area_code= '"+areaCode+"' and date= '"+stamp+"'";
+		 String sql=" select count(*) from Hour_Weather where area_code like '"+areaCode+"%' and date= '"+stamp+"'";
 		 return countAmounts(sql);
 	}	
 //分页查询
 	public List<HourWeather> findPagination(String areaCode,Timestamp stamp,int col,int currentPage){
-		 String sql="select * from Hour_Weather as hw  where area_code= '"+areaCode+"' and date= '"+stamp+"' order by id desc";
+		 String sql="select * from Hour_Weather as hw  where area_code like '"+areaCode+"%' and date= '"+stamp+"' order by id desc";
 		 return findPagination(sql,HourWeather.class,currentPage,col);
 	}
 	@Override
@@ -126,12 +126,12 @@ public class HourWeatherDaoImpl extends BaseDaoImpl<HourWeather> implements Hour
 	}
 //模糊查询站点气象信息
 	public List<HourWeather> getVagueStationWeather(String areaCode,String stationName,Timestamp stamp,int col,int page){
-		String sql="select * from Hour_Weather as hw  where area_code like'%"+areaCode+"%' and station_name like'%"+stationName+"%' and date='"+ stamp+"'order by id desc";
+		String sql="select * from Hour_Weather as hw  where area_code like'"+areaCode+"%' and station_name like'"+stationName+"%' and date='"+ stamp+"'order by id desc";
 		return findPagination(sql,HourWeather.class,page,col);
 	}
 //模糊查询站点气象信息时统计条目数
 	public long getVagueStationWeatherCount(String areaCode,String stationName,Timestamp stamp){
-		String sql="select count(*) from Hour_Weather as hw  where area_code like'% "+areaCode+"%' and station_name like'% "+stationName+"%' and date='"+ stamp+"'";
+		String sql="select count(*) from Hour_Weather as hw  where area_code like'"+areaCode+"%' and station_name like '"+stationName+"%' and date='"+ stamp+"'";
 		return countAmounts(sql);
 	}
 	@Override

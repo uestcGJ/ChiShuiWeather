@@ -61,8 +61,8 @@ public class WarnStrategy {
 	public void setStations(Set<Stations> stations){
 		this.stations=stations;
 	}
-	//报警联络人
-	@ManyToMany(fetch = FetchType.EAGER,targetEntity=Liaisons.class)
+	//报警联络人 
+	@ManyToMany
 	@JoinTable(name="warnstrategy_liaisons",
 	joinColumns=@JoinColumn(name="warnstrategy_id",referencedColumnName="id"),
     inverseJoinColumns=@JoinColumn(name="liaisons_id",referencedColumnName="id"))

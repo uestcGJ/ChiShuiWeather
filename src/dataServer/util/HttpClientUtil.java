@@ -78,7 +78,7 @@ public class HttpClientUtil {
 	 * */
 	public static void Post(String url,String xml,String responseFile,int ConnTimeOut, int WaitTimeOut) throws HttpException,SocketTimeoutException,ConnectTimeoutException,IOException{
 	      PostMethod post = new PostMethod(url);
-          RequestEntity entity = new StringRequestEntity(xml, "text/xml", "utf-8");  
+          RequestEntity entity = new StringRequestEntity(xml, "text/html", "utf-8");  
 	      post.setRequestEntity(entity);
  	        // Get HTTP client
  	      HttpClient HttpClient = new HttpClient();
@@ -108,7 +108,7 @@ public class HttpClientUtil {
 	            con.setDoOutput(true);  
 	            con.setRequestProperty("Pragma", "no-cache");  
 	            con.setRequestProperty("Cache-Control", "no-cache");  
-	            con.setRequestProperty("Content-Type", "text/xml");  
+	            con.setRequestProperty("Content-Type", "text/html");  
                 OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());      
 	            out.write(new String(xml.getBytes("UTF-8")));  
 	            out.flush();  
@@ -147,7 +147,7 @@ public class HttpClientUtil {
 	 	        PostMethod post = new PostMethod(strURL);
 		        // Request content will be retrieved directly
 	 	        // from the input stream
-                FileRequestEntity  entity = new FileRequestEntity(input, "text/xml; charset=utf-8");
+                FileRequestEntity  entity = new FileRequestEntity(input, "text/html; charset=utf-8");
                 post.setRequestEntity(entity);
 	  	        // Get HTTP client
 	  	        HttpClient HttpClient = new HttpClient();

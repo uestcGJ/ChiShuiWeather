@@ -13,4 +13,6 @@ public interface WarnDao extends BaseDao<Warn> {
 	List<Warn> findPaginationWarns(Boolean status,int col,int page);
 	
 	long getWarnCount(Boolean status);
+
+	Object getWarnByDateAndStrategyId(String currentHourDate, long id);
 }

@@ -28,6 +28,8 @@ public class User{
 	private String description;
 	@Column(name="PASSWORD",length = 100)
     private String password;
+	@Column(name="VERIFY_CODE",length = 20)
+    private String verify_code;
 	
 	//foreign key  Role		
 	@ManyToOne(targetEntity=Role.class)
@@ -81,5 +83,12 @@ public class User{
 	}
 	public String getDescription(){
 		return this.description;
+	}
+  //verify_code
+	public void setVerifyCode(String verify_code){
+		this.verify_code=verify_code;
+	}
+	public String getVerifyCode(){
+		return this.verify_code;
 	}
 }

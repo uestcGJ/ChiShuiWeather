@@ -1,0 +1,988 @@
+{
+    "stations": [
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2823",
+            "stationName": "马临",
+            "lat": "28.2589",
+            "lng": "106.1772"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "57710",
+            "stationName": "仁怀",
+            "lat": "27.8",
+            "lng": "106.4"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "57609",
+            "stationName": "赤水",
+            "lat": "28.5833",
+            "lng": "105.7"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "57614",
+            "stationName": "习水",
+            "lat": "28.3333",
+            "lng": "106.2167"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2815",
+            "stationName": "民化",
+            "lat": "28.2778",
+            "lng": "106.0833"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2912",
+            "stationName": "丙安",
+            "lat": "28.4756",
+            "lng": "105.82"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2820",
+            "stationName": "回龙",
+            "lat": "28.1892",
+            "lng": "106.2061"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2845",
+            "stationName": "长坝",
+            "lat": "28.3753",
+            "lng": "106.0917"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2846",
+            "stationName": "群丰",
+            "lat": "28.2611",
+            "lng": "106"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2728",
+            "stationName": "楠木",
+            "lat": "27.82",
+            "lng": "106.4711"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2853",
+            "stationName": "丹霞谷",
+            "lat": "28.4811",
+            "lng": "106.4219"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2843",
+            "stationName": "永胜",
+            "lat": "28.5864",
+            "lng": "106.5678"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2712",
+            "stationName": "五马",
+            "lat": "27.64",
+            "lng": "106.2617"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2827",
+            "stationName": "楠木",
+            "lat": "28.1917",
+            "lng": "106.3958"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2907",
+            "stationName": "大同",
+            "lat": "28.5072",
+            "lng": "105.6781"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2720",
+            "stationName": "大坝炮站",
+            "lat": "27.995",
+            "lng": "106.4225"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2831",
+            "stationName": "尚华",
+            "lat": "28.2594",
+            "lng": "106.165"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2848",
+            "stationName": "小古池",
+            "lat": "28.745",
+            "lng": "106.5228"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2822",
+            "stationName": "官店",
+            "lat": "28.3",
+            "lng": "106.6167"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2909",
+            "stationName": "石堡",
+            "lat": "28.5067",
+            "lng": "106.1706"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2716",
+            "stationName": "学孔",
+            "lat": "27.9644",
+            "lng": "106.5522"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2849",
+            "stationName": "双岗",
+            "lat": "28.2492",
+            "lng": "106.4711"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2840",
+            "stationName": "钢铁",
+            "lat": "28.1344",
+            "lng": "106.0194"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2803",
+            "stationName": "永安",
+            "lat": "28.1986",
+            "lng": "106.4036"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2910",
+            "stationName": "五柱峰",
+            "lat": "28.4031",
+            "lng": "105.9511"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2725",
+            "stationName": "云安",
+            "lat": "27.6494",
+            "lng": "106.3033"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2722",
+            "stationName": "岩坪",
+            "lat": "27.9697",
+            "lng": "106.4006"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2727",
+            "stationName": "龙源",
+            "lat": "28.0306",
+            "lng": "106.5414"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2855",
+            "stationName": "大石",
+            "lat": "28.4125",
+            "lng": "106.715"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2857",
+            "stationName": "箐角",
+            "lat": "28.3508",
+            "lng": "106.6828"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2841",
+            "stationName": "同民",
+            "lat": "28.2036",
+            "lng": "106.0056"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2905",
+            "stationName": "官渡",
+            "lat": "28.5547",
+            "lng": "106.0817"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R0216",
+            "stationName": "森林",
+            "lat": "28.1983",
+            "lng": "106.2889"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R0218",
+            "stationName": "元厚",
+            "lat": "28.3358",
+            "lng": "105.9636"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2911",
+            "stationName": "旺隆",
+            "lat": "28.5367",
+            "lng": "105.8544"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2808",
+            "stationName": "仙源",
+            "lat": "28.4097",
+            "lng": "106.6586"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2837",
+            "stationName": "新庄",
+            "lat": "28.3139",
+            "lng": "106.6194"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2842",
+            "stationName": "大安",
+            "lat": "28.3433",
+            "lng": "106.3383"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2850",
+            "stationName": "关坪",
+            "lat": "28.3919",
+            "lng": "106.2156"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2834",
+            "stationName": "岩寨",
+            "lat": "28.1844",
+            "lng": "106.1481"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2835",
+            "stationName": "沙溪",
+            "lat": "28.2214",
+            "lng": "106.5111"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2724",
+            "stationName": "美酒河",
+            "lat": "28.1128",
+            "lng": "106.23"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2867",
+            "stationName": "安家井",
+            "lat": "28.1442",
+            "lng": "106.0239"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2816",
+            "stationName": "三岔河",
+            "lat": "28.4392",
+            "lng": "106.3994"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2709",
+            "stationName": "高大坪",
+            "lat": "28.01",
+            "lng": "106.4561"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2913",
+            "stationName": "复兴",
+            "lat": "28.5264",
+            "lng": "105.7419"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2901",
+            "stationName": "云集",
+            "lat": "28.57",
+            "lng": "105.8792"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2714",
+            "stationName": "大坝",
+            "lat": "28.0167",
+            "lng": "106.4214"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2707",
+            "stationName": "喜头镇",
+            "lat": "27.9125",
+            "lng": "106.5456"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2708",
+            "stationName": "三合镇",
+            "lat": "28.0772",
+            "lng": "106.3483"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2812",
+            "stationName": "程寨",
+            "lat": "28.4033",
+            "lng": "106.3075"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2719",
+            "stationName": "水塘",
+            "lat": "27.9011",
+            "lng": "106.4233"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2903",
+            "stationName": "月亮湖",
+            "lat": "28.6217",
+            "lng": "106.1122"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2851",
+            "stationName": "永安炮站",
+            "lat": "28.1942",
+            "lng": "106.4047"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2923",
+            "stationName": "两汇水",
+            "lat": "28.465",
+            "lng": "105.6194"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2858",
+            "stationName": "凤凰",
+            "lat": "28.6508",
+            "lng": "106.5339"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2866",
+            "stationName": "周家",
+            "lat": "28.1656",
+            "lng": "106.2739"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2821",
+            "stationName": "二里",
+            "lat": "28.2306",
+            "lng": "106.4528"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2703",
+            "stationName": "鲁班",
+            "lat": "27.7408",
+            "lng": "106.2908"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2817",
+            "stationName": "醒民",
+            "lat": "28.1561",
+            "lng": "106.0164"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2813",
+            "stationName": "寨坝",
+            "lat": "28.6144",
+            "lng": "106.5875"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2718",
+            "stationName": "合马",
+            "lat": "28.0394",
+            "lng": "106.3281"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2830",
+            "stationName": "和平",
+            "lat": "28.1417",
+            "lng": "106.255"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2854",
+            "stationName": "狮子",
+            "lat": "28.4208",
+            "lng": "106.3522"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2861",
+            "stationName": "后田",
+            "lat": "28.345",
+            "lng": "106.3828"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2874",
+            "stationName": "鱼丘坝水库",
+            "lat": "28.3003",
+            "lng": "106.2781"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2825",
+            "stationName": "红旗",
+            "lat": "28.4422",
+            "lng": "106.2897"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2706",
+            "stationName": "后山乡",
+            "lat": "27.6003",
+            "lng": "106.2078"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2711",
+            "stationName": "坛厂",
+            "lat": "27.74",
+            "lng": "106.3981"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2806",
+            "stationName": "吼滩",
+            "lat": "28.3969",
+            "lng": "106.3986"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R0215",
+            "stationName": "长岗井坝",
+            "lat": "27.6267",
+            "lng": "106.445"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2723",
+            "stationName": "向阳",
+            "lat": "27.94",
+            "lng": "106.36"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2856",
+            "stationName": "火秋坪",
+            "lat": "28.4319",
+            "lng": "106.6408"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2730",
+            "stationName": "中元",
+            "lat": "27.8633",
+            "lng": "106.4728"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2929",
+            "stationName": "小关子",
+            "lat": "28.4933",
+            "lng": "105.9117"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2870",
+            "stationName": "齐心",
+            "lat": "28.3136",
+            "lng": "106.055"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2906",
+            "stationName": "长沙",
+            "lat": "28.6939",
+            "lng": "105.99"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2726",
+            "stationName": "共和",
+            "lat": "27.8808",
+            "lng": "106.5797"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2927",
+            "stationName": "太和",
+            "lat": "28.5383",
+            "lng": "105.73"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2836",
+            "stationName": "金山",
+            "lat": "28.3083",
+            "lng": "106.6503"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2715",
+            "stationName": "九仓",
+            "lat": "27.6833",
+            "lng": "106.0619"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R0220",
+            "stationName": "长期",
+            "lat": "28.6247",
+            "lng": "106.0581"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2832",
+            "stationName": "长春",
+            "lat": "28.2508",
+            "lng": "106.0931"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2829",
+            "stationName": "大桥",
+            "lat": "28.1569",
+            "lng": "106.35"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2701",
+            "stationName": "龙井",
+            "lat": "27.7333",
+            "lng": "106.0817"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2801",
+            "stationName": "二朗",
+            "lat": "28.1608",
+            "lng": "106.3492"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2811",
+            "stationName": "同民",
+            "lat": "28.1836",
+            "lng": "105.9689"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2838",
+            "stationName": "顺江",
+            "lat": "28.4492",
+            "lng": "106.4119"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2863",
+            "stationName": "太平",
+            "lat": "28.3842",
+            "lng": "106.2017"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2864",
+            "stationName": "洞湾",
+            "lat": "28.2219",
+            "lng": "106.2217"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2871",
+            "stationName": "临江",
+            "lat": "28.1928",
+            "lng": "106.1644"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2844",
+            "stationName": "锅铲坝",
+            "lat": "28.4425",
+            "lng": "106.4428"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2710",
+            "stationName": "二合",
+            "lat": "28.0119",
+            "lng": "106.3453"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2814",
+            "stationName": "坭坝",
+            "lat": "28.7522",
+            "lng": "106.5131"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2904",
+            "stationName": "宝源",
+            "lat": "28.3753",
+            "lng": "105.6606"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R0217",
+            "stationName": "沙湾",
+            "lat": "28.5744",
+            "lng": "105.7353"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2847",
+            "stationName": "龙溪",
+            "lat": "28.2439",
+            "lng": "106.1169"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2920",
+            "stationName": "联奉",
+            "lat": "28.3753",
+            "lng": "105.6831"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2868",
+            "stationName": "东风水库",
+            "lat": "28.2908",
+            "lng": "106.1947"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2818",
+            "stationName": "习酒",
+            "lat": "28.1558",
+            "lng": "106.1711"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2713",
+            "stationName": "长岗",
+            "lat": "27.6675",
+            "lng": "106.4367"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2810",
+            "stationName": "大坡",
+            "lat": "28.5306",
+            "lng": "106.5392"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2902",
+            "stationName": "两河口",
+            "lat": "28.3494",
+            "lng": "105.7458"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2702",
+            "stationName": "茅坝",
+            "lat": "27.7169",
+            "lng": "106.1653"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2908",
+            "stationName": "白云",
+            "lat": "28.6958",
+            "lng": "105.9633"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2869",
+            "stationName": "落妹老",
+            "lat": "28.2853",
+            "lng": "105.9728"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2873",
+            "stationName": "莫落",
+            "lat": "28.185",
+            "lng": "106.3128"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R2914",
+            "stationName": "天台",
+            "lat": "28.5661",
+            "lng": "105.7522"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2807",
+            "stationName": "土城",
+            "lat": "28.2769",
+            "lng": "106.0008"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2704",
+            "stationName": "茅台镇",
+            "lat": "27.8547",
+            "lng": "106.3714"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2802",
+            "stationName": "桃林",
+            "lat": "28.2042",
+            "lng": "106.56"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2852",
+            "stationName": "吼滩炮站",
+            "lat": "28.3483",
+            "lng": "106.4169"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2809",
+            "stationName": "隆兴",
+            "lat": "28.2283",
+            "lng": "106.0997"
+        },
+        {
+            "areaName": "赤水市",
+            "areaCode": "520381",
+            "stationCode": "R0219",
+            "stationName": "葫市村",
+            "lat": "28.4853",
+            "lng": "105.9347"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2804",
+            "stationName": "银厂",
+            "lat": "28.2417",
+            "lng": "106.2903"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2717",
+            "stationName": "火石",
+            "lat": "28.0858",
+            "lng": "106.3839"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2721",
+            "stationName": "长岗炮站",
+            "lat": "27.6703",
+            "lng": "106.3056"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2705",
+            "stationName": "沙滩乡",
+            "lat": "28.0944",
+            "lng": "106.2483"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2731",
+            "stationName": "文政",
+            "lat": "27.7469",
+            "lng": "106.2725"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2819",
+            "stationName": "双龙",
+            "lat": "28.3206",
+            "lng": "106.5642"
+        },
+        {
+            "areaName": "仁怀市",
+            "areaCode": "520382",
+            "stationCode": "R2729",
+            "stationName": "小湾",
+            "lat": "27.6542",
+            "lng": "106.1356"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2805",
+            "stationName": "温水",
+            "lat": "28.4569",
+            "lng": "106.5425"
+        },
+        {
+            "areaName": "习水县",
+            "areaCode": "520330",
+            "stationCode": "R2865",
+            "stationName": "九龙",
+            "lat": "28.195",
+            "lng": "106.2458"
+        }
+    ]
+}

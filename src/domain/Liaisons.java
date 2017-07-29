@@ -52,10 +52,7 @@ public class Liaisons {
 	public void setLiaisonUnit(LiaisonUnit LiaisonUnit){
 		 this.LiaisonUnit=LiaisonUnit;
 	}
-	@ManyToMany(fetch = FetchType.EAGER, targetEntity=WarnStrategy.class)//,cascade={CascadeType.ALL}
-	@JoinTable(name="warnstrategy_liaisons",
-	joinColumns=@JoinColumn(name="liaisons_id",referencedColumnName="id"),
-    inverseJoinColumns=@JoinColumn(name="warnstrategy_id",referencedColumnName="id"))
+	@ManyToMany(mappedBy="liaisons") 
 	private List<WarnStrategy> warnStrategy;
 	
 	public List<WarnStrategy> getWarnStrategy(){

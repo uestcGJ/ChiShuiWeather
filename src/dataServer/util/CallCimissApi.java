@@ -43,7 +43,7 @@ public class CallCimissApi {
 		 + "&dataCode=SURF_CHN_MUL_HOR";/**表示地面逐小时数据*/
 		JSONObject jsonData = getRstJson(params);
 	   //for test
-		jsonData=RestUtil.testJson("d:/chiShuiWeather/return json.txt");
+		jsonData=RestUtil.testJson("d:/chiShuiWeather/returnJson.txt");
 		//对returnCode进行处理
 		try {
 			if(jsonData.getString("returnCode").equals("0")){
@@ -237,8 +237,8 @@ public class CallCimissApi {
 	 * @throws IOException 
 	   */
 	 public static void main(String[] args) throws JSONException, IOException{
-		 JSONObject testData=getAreaWeatherInfo("20000101000000","520381","PRE_1h");
-		 System.out.println(testData);
+		 JSONObject jsonData=RestUtil.testJson("d:/chiShuiWeather/returnJson.txt");
+		 System.out.println(jsonData);
 	 }
 
 }

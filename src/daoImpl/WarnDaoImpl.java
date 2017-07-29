@@ -25,4 +25,10 @@ public class WarnDaoImpl extends BaseDaoImpl<Warn> implements WarnDao{
 		sql+=" order by id desc";
 		return countAmounts(sql);
 	}
+	@Override
+	public Object getWarnByDateAndStrategyId(String currentHourDate, long id) {
+		// TODO Auto-generated method stub
+		String sql="select * from warn as warn where date='"+currentHourDate+"' and strategy_id="+id;
+		return this.findOneInSQL(sql, Warn.class);
+	}
 }

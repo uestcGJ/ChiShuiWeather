@@ -83,7 +83,7 @@ public class ResourceController {
     		responseData.put("stations", stationArray);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -140,7 +140,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -170,7 +170,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -220,7 +220,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -277,7 +277,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -333,7 +333,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -367,7 +367,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -417,7 +417,7 @@ public class ResourceController {
 		responseData.put("err", err);
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -462,7 +462,7 @@ public class ResourceController {
 		responseData.put("err", err);
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -486,7 +486,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -500,7 +500,7 @@ public class ResourceController {
 	 *   &nbsp;&nbsp;&nbsp;&nbsp; err:String 失败原因 <br/>
 	 *   &nbsp;&nbsp;&nbsp;&nbsp;vulner:JSONObject 易受灾点的详细信息
 	 * ***/
-	@RequestMapping(value="	vulner/checkDetail")
+	@RequestMapping(value="vulner/checkDetail")
 	public void checkDetail(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		boolean statusCode=false;
 		Long id=Long.parseLong(request.getParameter("id"));
@@ -528,7 +528,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -568,7 +568,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(JSONObject.fromObject(responseData));
 		out.flush();
@@ -627,7 +627,7 @@ public class ResourceController {
 	    		responseData.put("err", err);
 	    	}
 	    	responseData.put("statusCode", statusCode);
-	    	response.setContentType("text/xml;charset=utf-8");
+	    	response.setContentType("text/html;charset=utf-8");
 	    	PrintWriter out=response.getWriter();
 			out.println(responseData);
 			out.flush();
@@ -681,7 +681,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -744,7 +744,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -768,7 +768,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -827,7 +827,7 @@ public class ResourceController {
 	    		responseData.put("err", err);
 	    	}
 	    	responseData.put("statusCode", statusCode);
-	    	response.setContentType("text/xml;charset=utf-8");
+	    	response.setContentType("text/html;charset=utf-8");
 	    	PrintWriter out=response.getWriter();
 			out.println(responseData);
 			out.flush();
@@ -874,7 +874,7 @@ public class ResourceController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();

@@ -1,24 +1,11 @@
 package dataServer.util;
 
-import java.security.GeneralSecurityException;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-
-import javax.mail.Authenticator;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.sun.mail.util.MailSSLSocketFactory;
-
 import domain.SystemInfo;
+import net.sf.json.JSONObject;
 import service.FindService;
 
 /**
@@ -58,67 +45,6 @@ public class MessageUtil{
 	        	return false;
 	        }
 	 }
-	/**验证服务器有效性**/
-	 public static boolean checkServer(Map<String,Object> emailPara){
-		  String address=(String) emailPara.get("address");
-		  int port =(int)emailPara.get("port");
-		  String account=(String) emailPara.get("account");
-		  String pword=(String) emailPara.get("pword");
-		  // 配置发送邮件的环境属性
-	      final Properties props = new Properties();
-	      // 表示SMTP发送邮件，需要进行身份验证
-	      props.put("mail.smtp.auth", true);  //SMTP服务器是否需要用户认证，默认为false
-	      props.put("mail.smtp.host",address); //SMTP服务器地址
-	      props.put("mail.smtp.port",port); //SMTP服务器端口
-	      props.put("mail.smtp.user", account);
-	      props.put("mail.smtp.password",pword);// pword
-	      MailSSLSocketFactory sf;
-	      try {
-				sf = new MailSSLSocketFactory();
-				sf.setTrustAllHosts(true); 
-				props.put("mail.smtp.ssl.socketFactory",sf); 
-			} catch (GeneralSecurityException e1) {
-			// TODO Auto-generated catch block
-			  e1.printStackTrace();
-			  return false;
-			} 
-	     // 构建授权信息，用于进行SMTP进行身份验证
-	      Authenticator authenticator = new Authenticator() {
-	          @Override
-	          protected PasswordAuthentication getPasswordAuthentication() {
-	              // 用户名、密码
-	              String userName = props.getProperty("mail.smtp.user");
-	              String password = props.getProperty("mail.smtp.password");
-	              return new PasswordAuthentication(userName, password);
-	          }
-	      };
-	      // 使用环境属性和授权信息，创建邮件会话
-	      Session mailSession = Session.getInstance(props, authenticator);
-	      // 创建邮件消息
-	      MimeMessage message = new MimeMessage(mailSession);
-	      // 设置发件人
-	      InternetAddress form;
-		try {
-			form = new InternetAddress(props.getProperty("mail.smtp.user"));
-			message.setFrom(form);
-			 // 设置收件人
-		     InternetAddress[] sendTo = new InternetAddress[1];
-		     sendTo[0] = new InternetAddress(account);//给自己发送邮件测试
-		     message.setRecipients(javax.mail.internet.MimeMessage.RecipientType.TO,  sendTo);
-		   // 设置邮件标题
-		     message.setSubject("服务器测试");
-		  // 设置邮件的内容体       
-		     message.setContent("Hello word","text/html;charset=UTF-8");
-			  // 发送邮件
-		     Transport.send(message);
-		     // 设置抄送(抄送只能指定一个人)
-		    return true;
-		  } catch (MessagingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-			return false;
-		 }
-	  }  
 	/**
 	 * 邮件发送
 	 * @param recAddress 收件人地址
@@ -129,78 +55,100 @@ public class MessageUtil{
 	  public static boolean sendEmail(List<String> recAddress,String mailHead,String context){
 		  WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();    
 	      findService=(FindService)wac.getBean("findService");
+	      System.out.println("--------sendEmail----------");
 		  SystemInfo systemInfo=findService.findSystemInfoById((long)1);
 		  if(systemInfo.getEmailAddr()!=null){
-			  // 配置发送邮件的环境属性
-		      final Properties props = new Properties();
-		      // 表示SMTP发送邮件，需要进行身份验证
-		      props.put("mail.smtp.auth", "true");  //SMTP服务器是否需要用户认证，默认为false
-		      props.put("mail.smtp.host", systemInfo.getEmailAddr()); //SMTP服务器地址
-		      props.put("mail.smtp.port",systemInfo.getEmailPort()); //SMTP服务器端口
-		     /** 访问SMTP服务时需要提供的密码(必须为授权码,qq授权码可以有多个，这里任意用一个就可以,新浪邮箱在这里可以直接输入密码就行，无需授权码)
-		      *   发件人的账号(一定要开通pop3/smtp协议)
-		       * **/
-		      try {//密码和账号是经过AES加密后存储，使用前解密
-		    	String account=EncryptUtils.aesDecrypt(systemInfo.getEmailAccount());
-			    props.put("mail.smtp.user", account);
-				String pword=EncryptUtils.aesDecrypt(systemInfo.getEmailPword());
-				props.put("mail.smtp.password",pword);// 
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	          //开启ssl加密(qq邮箱需要ssl加密)
-		      MailSSLSocketFactory sf;
-		      try {
-					sf = new MailSSLSocketFactory();
-					sf.setTrustAllHosts(true); 
-					props.put("mail.smtp.ssl.socketFactory",sf); 
-				} catch (GeneralSecurityException e1) {
-				// TODO Auto-generated catch block
-				  e1.printStackTrace();
-				  return false;
-				} 
-		     // 构建授权信息，用于进行SMTP进行身份验证
-		      Authenticator authenticator = new Authenticator() {
-		          @Override
-		          protected PasswordAuthentication getPasswordAuthentication() {
-		              // 用户名、密码
-		              String userName = props.getProperty("mail.smtp.user");
-		              String password = props.getProperty("mail.smtp.password");
-		              return new PasswordAuthentication(userName, password);
-		          }
-		      };
-		      // 使用环境属性和授权信息，创建邮件会话
-		      Session mailSession = Session.getInstance(props, authenticator);
-		      // 创建邮件消息
-		      MimeMessage message = new MimeMessage(mailSession);
-		      // 设置发件人
-		      InternetAddress form;
-			try {
-				form = new InternetAddress(props.getProperty("mail.smtp.user"));
-				message.setFrom(form);
-				 // 设置收件人
-			     InternetAddress[] sendTo = new InternetAddress[recAddress.size()];
-			     for(int i=0;i<recAddress.size();i++){
-			    	 sendTo[i] = new InternetAddress(recAddress.get(i));
-			     }
-			     message.setRecipients(javax.mail.internet.MimeMessage.RecipientType.TO,  sendTo);
-			   // 设置邮件标题
-			     message.setSubject(mailHead);
-			  // 设置邮件的内容体       
-			     message.setContent(context,"text/html;charset=UTF-8");
-				  // 发送邮件
-			     Transport.send(message);
-			     // 设置抄送(抄送只能指定一个人)
-			   //  new InternetAddress("931385512@qq.com");
-			     return true;
-			  } catch (MessagingException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-				return false;
-			 }
-		  }else{
-			  return false;
-		  }	
-	  }  
+			  String url="message/sendEmail";
+			  CallWebService webService=new CallWebService(url);
+			  JSONObject emailPara=new JSONObject();
+			  emailPara.put("host", systemInfo.getEmailAddr());
+			  emailPara.put("port",systemInfo.getEmailPort());
+			  emailPara.put("account", systemInfo.getEmailAccount());
+			  emailPara.put("pword", systemInfo.getEmailPword());
+			  JSONObject infoPara=new JSONObject();
+			  infoPara.put("recAddress", recAddress);
+			  infoPara.put("mailHead", mailHead);
+			  infoPara.put("context", context);
+			  String param="emailPara="+emailPara.toString()+"&infoPara="+infoPara;
+			  JSONObject responseData= webService.callWebService(param);
+			  System.out.println("--------回传信息----------"+responseData);
+			  return responseData.getBoolean("statusCode");
+		  }
+		  return false;
+	  } 
+		/**
+		 * 利用语音平台发送短信
+		 * @param phone 收件人手机号
+		 * @param context 内容
+		 * @return boolean 发送状态
+		 * **/    
+		  public static boolean sendSMS(String phone,String context){
+			  WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();    
+		      findService=(FindService)wac.getBean("findService");
+		      System.out.println("--------sendSMS----------");
+			  SystemInfo systemInfo=findService.findSystemInfoById((long)1);
+			  String accountId="";
+			  String appId="";
+			  String authcToken="";
+			  boolean useDefault=true;
+			  if(systemInfo.getAccountSid()!=null){
+				  accountId=systemInfo.getAccountSid();
+				  appId=systemInfo.getAppId();
+				  authcToken=systemInfo.getAuthToken();
+				  useDefault=false;
+			  }
+			  String url="message/sendSMS";
+			  CallWebService webService=new CallWebService(url);
+			  JSONObject smsPara=new JSONObject();
+			  smsPara.put("accountId", accountId);
+			  smsPara.put("appId",appId);
+			  smsPara.put("useDefault",useDefault);
+			  smsPara.put("authcToken",authcToken);
+			  JSONObject infoPara=new JSONObject();
+			  infoPara.put("phone", phone);
+			  infoPara.put("context", context);
+			  String param="smsPara="+smsPara.toString()+"&infoPara="+infoPara;
+			  JSONObject responseData= webService.callWebService(param);
+			  System.out.println("--------回传信息----------"+responseData);
+			  return responseData.getBoolean("statusCode");
+		  }
+		  /**
+			 * 拨打电话，发送语音消息
+			 * @param phone String 收件人手机号
+			 * @param context String 内容
+			 * @param playTimes int 播放次数 
+			 * @return boolean 发送状态
+			 * **/    
+		 public static boolean sendVoiceMessage(String phone,String context,int playTimes){
+				WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();    
+			    findService=(FindService)wac.getBean("findService");
+			    System.out.println("--------sendSMS----------");
+				SystemInfo systemInfo=findService.findSystemInfoById((long)1);
+				String accountId="";
+				String appId="";
+				String authcToken="";
+				boolean useDefault=true;
+				//如果数据库中已经存放了语音平台的信息，则读取信息，否则发送空字符串，让服务器端读取配置信息
+				if(systemInfo.getAccountSid()!=null){
+					  accountId=systemInfo.getAccountSid();
+					  appId=systemInfo.getAppId();
+					  authcToken=systemInfo.getAuthToken();
+					  useDefault=false;
+				}
+				String url="message/sendVoiceMessage";
+				CallWebService webService=new CallWebService(url);
+				JSONObject voicePara=new JSONObject();
+				voicePara.put("accountId", accountId);
+				voicePara.put("appId",appId);
+				voicePara.put("useDefault",useDefault);
+				voicePara.put("authcToken",authcToken);
+				JSONObject infoPara=new JSONObject();
+				infoPara.put("phone", phone);
+				infoPara.put("context", context);
+				infoPara.put("playTimes", playTimes);
+				String param="voicePara="+voicePara.toString()+"&infoPara="+infoPara;
+				JSONObject responseData= webService.callWebService(param);
+				System.out.println("--------回传信息----------"+responseData);
+				return responseData.getBoolean("statusCode");
+	  }  	  
 }

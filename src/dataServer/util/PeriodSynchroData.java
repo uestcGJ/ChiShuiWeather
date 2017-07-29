@@ -69,7 +69,7 @@ public class PeriodSynchroData extends TimerTask{
     	//当期整点时间
     	String time=DateUtil.getStringDate(currentDate);
     	String areaCode="520381,520330,520382";//赤水、习水、仁怀三个地区
-    	String element="";
+    	String element="PRE_1h,PRE_3h,PRE_6h,PRE_12h,PRE_24h,TEM,TEM_Max,TEM_Min,TEM_Max_24h,TEM_Min_24h,DPT,RHU,RHU_Min";
     	//查询CMISS系统，获取气象参数
     	JSONObject json=CallCimissApi.getAreaWeatherInfo(time,areaCode,element);
     	if(json.getBoolean("statusCode")){//查找成功，存放数据
@@ -142,7 +142,7 @@ public class PeriodSynchroData extends TimerTask{
         		Timestamp date=(Timestamp)unSynch.get("timeStamp");
         		String time=DateUtil.getStringDate(date);
         		String stationCode=(String)unSynch.get("stationCode");
-        		String element="";
+            	String element="PRE_1h,PRE_3h,PRE_6h,PRE_12h,PRE_24h,TEM,TEM_Max,TEM_Min,TEM_Max_24h,TEM_Min_24h,DPT,RHU,RHU_Min";
         		//访问CIMISS，获取气象数据
         		JSONObject json=CallCimissApi.getStationWeatherInfo(time,stationCode,element);
         		if(json.getBoolean("statusCode")){//查找成功，存放数据
@@ -231,11 +231,21 @@ public class PeriodSynchroData extends TimerTask{
 		String[] nameAndAreaCode=findService.findStationNameAndAreaCodeByStationCode(stationCode);
 		hw.setStationName(nameAndAreaCode[0]);
 		hw.setAreaCode(nameAndAreaCode[1]);
-		if(isExit){//存在则修改，不存在则新建 
-			alterService.alterHourWeather(hw);
-		}else{
-			addService.addHourWeather(hw);
-		}      
+		if(nameAndAreaCode[1]!=null){
+			if(isExit){//存在则修改，不存在则新建 
+				try{
+				   alterService.alterHourWeather(hw);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			}else{
+				try{
+				  addService.addHourWeather(hw);
+				}catch(Exception e){
+					//e.printStackTrace();
+				}
+			}      
+		}	
     }
     /***对比预警策略，产生预警信息***/
     private void checkWarnStrategy(){
@@ -274,7 +284,8 @@ public class PeriodSynchroData extends TimerTask{
                     		}
                     	}
                     }
-                    if(!warnStationCodes.isEmpty()){//产生告警信息
+                    //存在告警且当前小时和当前预警策略尚未同步的情况下才进行预警处理，避免因为同步而造成重复告警
+                    if(!warnStationCodes.isEmpty()&&findService.findWarnByDateAndStrategyId(DateUtil.getCurrentHourDate(),strategy.getId())==null){//产生告警信息
                     	StringBuffer warnInfo=new StringBuffer(DateUtil.getCurrentTime());
                     	warnInfo.append(",");
                     	Set<Stations> warnStations=new HashSet<Stations>();
@@ -334,6 +345,7 @@ public class PeriodSynchroData extends TimerTask{
                     	warn.setTitle(param+"预警");
                     	warn.setInfoWay(strategy.getInfoWay());
                     	warn.setContext(warnInfo.toString());
+                    	warn.setDate(DateUtil.getCurrentHourDate());
                     	warnHandle(warn);
                     }
     			}
@@ -341,7 +353,8 @@ public class PeriodSynchroData extends TimerTask{
     		/****处理告警
     		 * 包括生成告警信息存放到数据库中、发送告警短信、邮件和系统消息
     		 * ***/
-    		 private synchronized void warnHandle(Warn warn){
+    		 private  void warnHandle(Warn warn){
+    			 System.out.println("--------------处理告警--------------");
     			try{
         			addService.addWarn(warn);
     			}catch(Exception e){
@@ -361,23 +374,25 @@ public class PeriodSynchroData extends TimerTask{
     					}
     					public void run(){
     						if(info.charAt(0)=='1'){//是否发送短信
-    							VoiceMsgService.sendSms(liaison.getPhone(), warn.getContext());
+    							MessageUtil.sendSMS(liaison.getPhone(), warn.getContext());
     						}
     						if(info.charAt(1)=='1'){//是否拨打电话
-    							VoiceMsgService.sendVoiceMessage(liaison.getPhone(), warn.getContext(), 2);
+    							MessageUtil.sendVoiceMessage(liaison.getPhone(), warn.getContext(), 2);
     						}
     					}
     				}
     				List<String> emailAddress=new ArrayList<>();
     				ExecutorService exec=Executors.newCachedThreadPool();
+       			    System.out.println("--------------拨打电话--------------");
     				for(Liaisons liaison:liaisons){
-    					exec.execute(new SendInfo(liaison,infoWay));
     					emailAddress.add(liaison.getEmail());
+    					exec.execute(new SendInfo(liaison,infoWay));
     				}
     				exec.shutdown();
     				//发送邮件
     				String title=DateUtil.getCurrentTime()+"赤水市气象局预警信息";
     				if(infoWay.charAt(2)=='1'&&!emailAddress.isEmpty()){//是否发送邮件
+           			    System.out.println("--------------发送邮件--------------");
 						MessageUtil.sendEmail(emailAddress, title, warn.getContext());
 					}
     			}

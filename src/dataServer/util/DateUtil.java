@@ -55,4 +55,9 @@ public class DateUtil {
 		String date=sf.format(new Date())+"0000";
 		return date;
 	}
+	public static String getCurrentHourDate(){
+		SimpleDateFormat sf=new SimpleDateFormat("yyyyMMddHH");
+		String date=sf.format(new Date());
+		return date;
+	}
 }

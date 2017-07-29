@@ -21,7 +21,7 @@ public class RestUtil {
   //贵州省MUSIC系统服务器地址
   private final String host="10.203.89.55";
   //连接超时时间
-  private final int timeoutInMilliSeconds=1000*60*2 ;//2 MINUTE
+  private final int timeoutInMilliSeconds=1000*6*2 ;//2 MINUTE
   /**
    *采用rest方式连接数据库获取数据
    *@param params String 包含请求参数的url
@@ -33,9 +33,12 @@ public class RestUtil {
       URI uri = new URI("http",this.host,"/cimiss-web/api",params,"");
       URL url=uri.toURL();
       URLConnection con = url.openConnection();
+      con.setRequestProperty("Content-type","text/html");
+      con.setRequestProperty("Accept-Charset","utf-8");
+      con.setRequestProperty("contentType", "utf-8");
       con.setConnectTimeout( this.timeoutInMilliSeconds ); 
       StringBuilder retStr=new StringBuilder();
-      BufferedReader reader=new BufferedReader(new InputStreamReader(con.getInputStream()));
+      BufferedReader reader=new BufferedReader(new InputStreamReader(con.getInputStream(),"utf-8"));
       String line = reader.readLine();
       while(line!=null) {
         retStr.append(line).append("\r\n");
@@ -87,7 +90,7 @@ public class RestUtil {
       url = uri.toURL();
       con = url.openConnection();
       con.setConnectTimeout( this.timeoutInMilliSeconds ); 
-      reader = new BufferedReader(  new InputStreamReader(con.getInputStream()));
+      reader = new BufferedReader(  new InputStreamReader(con.getInputStream(),"utf-8"));
       String line = reader.readLine();
       while (line != null) {
         retStr.append(line).append("\r\n");

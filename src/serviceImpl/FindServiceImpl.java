@@ -294,6 +294,11 @@ public //获取监测站条目数量
 	return warnDao.getWarnCount(status);
  }
  @Override
+ public Object findWarnByDateAndStrategyId(String currentHourDate, long id) {
+ 	// TODO Auto-generated method stub
+ 	return warnDao.getWarnByDateAndStrategyId(currentHourDate,id);
+ }
+ @Override
  public Warn findWarnById(long id) {
 	// TODO Auto-generated method stub
 	return warnDao.findEntity(Warn.class, id);
@@ -340,6 +345,7 @@ public SystemInfo findSystemInfoById(long id) {
 	// TODO Auto-generated method stub
 	return systemDao.findEntity(SystemInfo.class, id);
 }
+
 
 	
 }

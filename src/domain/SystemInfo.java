@@ -35,6 +35,15 @@ public class SystemInfo {
 	
 	@Column(name="SMS_PORT")
 	private int sms_port;			//短信模块端口
+	
+	@Column(name="ACCOUNT_SID")
+	private String account_sid;			//语音平台账户id
+	
+	@Column(name="AUTH_TOKEN")
+	private String auth_token;			//语音平台auth_token
+	
+	@Column(name="APP_ID")
+	private String app_id;			//语音平台app_id
 	//id
 	public Long getId(){
 		return this.id;
@@ -81,4 +90,25 @@ public class SystemInfo {
 	public int getSmsPort(){
 		return this.sms_port;
 	}
+    //account_sid
+	public void setAccountSid(String account_sid){
+		this.account_sid=account_sid;
+	}
+	public String getAccountSid(){
+		return this.account_sid;
+	}
+    //auth_token
+	public void setAuthToken(String auth_token){
+		this.auth_token=auth_token;
+	}
+	public String getAuthToken(){
+		return this.auth_token;
+	}
+    //app_id
+	public void setAppId(String app_id){
+		this.app_id=app_id;
+	}
+	public String getAppId(){
+		return this.app_id;
+	}	
 }

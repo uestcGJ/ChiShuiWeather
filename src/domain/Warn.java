@@ -60,6 +60,8 @@ public class Warn {
 	@Column(name="INFO_WAY",length=10)  //预警通知方式三个字符分别表示短信、电话、邮件，为1表示采用，0表示不采用
 	private String info_way;	       //预警内容
 	
+	@Column(name="DATE",length=50)
+	private String date;		    //告警时间,形如2017062712，用于判定是否已经存储过当前时间点的告警信息
 	//foreign key		
 	@ManyToMany(fetch = FetchType.EAGER,targetEntity=Stations.class)
 	@JoinTable(name="warn_stations",
@@ -165,4 +167,11 @@ public class Warn {
 	public String getSource(){
 		return this.source;
 	}
+//date
+	public void setDate(String date){
+		this.date = date;
+	}
+	public String getDate(){
+		return this.date;
+	}	
 }

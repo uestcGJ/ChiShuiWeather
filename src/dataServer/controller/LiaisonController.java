@@ -81,7 +81,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -143,7 +143,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -176,7 +176,7 @@ public class LiaisonController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -223,7 +223,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -262,7 +262,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -321,7 +321,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -383,7 +383,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -453,7 +453,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -491,7 +491,7 @@ public class LiaisonController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();

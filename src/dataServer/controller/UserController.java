@@ -18,10 +18,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import dataServer.util.DateUtil;
+import dataServer.util.MessageUtil;
 import dataServer.util.NumConv;
 import domain.Permissions;
 import domain.Role;
 import domain.User;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import service.AddService;
@@ -59,7 +61,7 @@ public class UserController {
 			responseData.put("psw", user.getPassword());
 		}	
 		responseData.put("statusCode", statusCode);
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -88,7 +90,7 @@ public class UserController {
 			}
 		}	
 		responseData.put("statusCode", statusCode);
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -111,7 +113,7 @@ public class UserController {
 			responseData.put("phone", user.getPhone());
 		}	
 		responseData.put("statusCode", statusCode);
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -150,7 +152,7 @@ public class UserController {
 		   if(!statusCode){
 			   responseData.put("err", err);
 		   }
-	       response.setContentType("text/xml");
+	       response.setContentType("text/html");
 		   response.setCharacterEncoding("utf-8");
 		   PrintWriter out=response.getWriter();
 		   out.println(responseData);
@@ -186,7 +188,7 @@ public class UserController {
 		  if(!statusCode){
 			   responseData.put("err", err);
 		  }
-		  response.setContentType("text/xml");
+		  response.setContentType("text/html");
 		  response.setCharacterEncoding("utf-8");
 		  PrintWriter out=response.getWriter();
 		  out.println(responseData);
@@ -223,7 +225,7 @@ public class UserController {
 		   if(!statusCode){
 			   responseData.put("err", err);
 		   }
-	       response.setContentType("text/xml");
+	       response.setContentType("text/html");
 		   response.setCharacterEncoding("utf-8");
 		   PrintWriter out=response.getWriter();
 		   out.println(responseData);
@@ -277,7 +279,7 @@ public class UserController {
 			err="由于异常原因，数据库中未查找到权限信息，请稍后重试，若一直出现该故障，请联系维护人员重新部署系统。";
 			responseData.put("err", err);
 		}
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -325,7 +327,7 @@ public class UserController {
 		}
 		responseData.put("statusCode", statusCode);
 		responseData.put("err", err);
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -388,7 +390,7 @@ public class UserController {
 	  		responseData.put("err", err);
 	  	}
 	  	responseData.put("statusCode", statusCode);
-	  	response.setContentType("text/xml;charset=utf-8");
+	  	response.setContentType("text/html;charset=utf-8");
 	  	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -444,7 +446,7 @@ public class UserController {
 	  		responseData.put("err", err);
 	  	}
 	  	responseData.put("statusCode", statusCode);
-	  	response.setContentType("text/xml;charset=utf-8");
+	  	response.setContentType("text/html;charset=utf-8");
 	  	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -492,7 +494,7 @@ public class UserController {
     	}
 		responseData.put("status", statusCode);
 		responseData.put("err", err);
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -510,7 +512,7 @@ public class UserController {
   			responseData.put("err","数据库中不存在指定对象。");
   		}
   		responseData.put("statusCode", statusCode);
-  		response.setContentType("text/xml;charset=utf-8");
+  		response.setContentType("text/html;charset=utf-8");
   		PrintWriter out=response.getWriter();
   		out.println(responseData);
   		out.flush();
@@ -542,7 +544,7 @@ public class UserController {
   			responseData.put("err",err);
   		}
   		responseData.put("statusCode", statusCode);
-  		response.setContentType("text/xml;charset=utf-8");
+  		response.setContentType("text/html;charset=utf-8");
   		PrintWriter out=response.getWriter();
   		out.println(responseData);
   		out.flush();
@@ -581,7 +583,7 @@ public class UserController {
     		responseData.put("err", err);
     	}
     	responseData.put("statusCode", statusCode);
-    	response.setContentType("text/xml;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -637,7 +639,7 @@ public class UserController {
 		}
 		responseData.put("status", statusCode);
 		responseData.put("err", err);
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -707,7 +709,7 @@ public class UserController {
   			responseData.put("err",err);
   		}
   		responseData.put("statusCode", statusCode);
-  		response.setContentType("text/xml;charset=utf-8");
+  		response.setContentType("text/html;charset=utf-8");
   		PrintWriter out=response.getWriter();
   		out.println(responseData);
   		out.flush();
@@ -762,7 +764,7 @@ public class UserController {
 		if(!statusCode){
 			responseData.put("err", err);
 		}
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -798,10 +800,128 @@ public class UserController {
   	    	responseData.put("err",err);
   	    }
   		responseData.put("statusCode", statusCode);
-  		response.setContentType("text/xml;charset=utf-8");
+  		response.setContentType("text/html;charset=utf-8");
   		PrintWriter out=response.getWriter();
   		out.println(responseData);
   		out.flush();
   		out.close();
     }  
+    /**找回密码-发送验证码**/ 
+    @RequestMapping("account/getVerifyCode")
+    public void getVerifyCode(HttpServletRequest request,HttpServletResponse response){
+    	JSONObject responseData=new JSONObject();
+    	boolean status=false;
+    	String verifyWay=request.getParameter("verifyWay");
+    	String desAddress="";
+    	String account=request.getParameter("account");
+    	User user=findService.findUserForLogin(account);
+    	String code=NumConv.createVerifyCode(4);
+    	String context="您正在尝试找回账号"+account+"的密码，本次验证码为："+code+"<br/>\n"+
+    	               "请勿泄露验证码，如果不是您本人操作请忽略该信息";
+    	System.out.println(context);
+    	String info="";
+    	if(verifyWay.equals("email")){//发送验证码至邮箱
+    		desAddress=user.getEmail();
+    		List<String> emails=new ArrayList<String>();
+    		emails.add(desAddress);
+    		status=MessageUtil.sendEmail(emails, "邮箱验证找回账号密码",context);
+    		if(!status){//发送失败重发
+    			status=MessageUtil.sendEmail(emails, "邮箱验证找回账号密码",context);
+    			if(status){
+    				info="验证消息已成功发送到您指定邮箱，请注意查收";
+    			}
+    			else{
+    				info="发送失败，请确认您指定邮箱是否开启垃圾邮箱拦截";
+    			}
+    		}
+    		else{
+    			info="验证消息已成功发送到您指定邮箱，请注意查收";
+    		}
+    	}
+    	else{//短信找回
+    		List<String> phones=new ArrayList<String>();
+    		phones.add(desAddress);
+    		status=MessageUtil.sendMessage(phones, context);
+    		desAddress=user.getPhone();
+    		if(!status){//发送失败重发
+    			status=MessageUtil.sendMessage(phones, context);
+    			if(status){
+    				info="验证消息已成功发送到您手机，请注意查收";
+    			}
+    			else{
+    				info="发送失败，请确认短信猫或您账户是否正常";
+    			}
+    		}
+    		else{
+    			info="验证消息已成功发送到您手机，请注意查收";
+    		}
+    	}
+    	if(status){
+    			user.setVerifyCode(code);
+    			status=alterService.alterUser(user);	
+    	}
+    	responseData.put("statusCode", status);
+    	responseData.put("info", info);
+    	response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+		
+		try {
+			PrintWriter out=response.getWriter();
+			out.println(responseData);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	} 
+    /**找回密码-发送验证码
+     * 核对验证码是否正确
+     * **/ 
+    @RequestMapping("account/checkVerifyCode")
+    public void checkVerifyCode(HttpServletRequest request,HttpServletResponse response) throws IOException{
+    	JSONObject responseData=new JSONObject();
+		boolean status=false;
+    	String account=request.getParameter("account");
+    	String code=request.getParameter("verifyCode");
+    	User user=findService.findUserForLogin(account);
+    	//System.out.println("account:"+account+"\t code:"+code);
+    	String verifyCode=null;
+    	if(user!=null&&(verifyCode=user.getVerifyCode())!=null){
+    		if(verifyCode.equals(code)){
+    			status=true;
+    		}
+    	}
+    	responseData.put("statusCode", status);
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+		PrintWriter out=response.getWriter();
+		out.println(responseData);
+		//System.out.println("response:"+responseJson);
+		out.flush();
+		out.close();
+	}  
+    /**验证重设密码**/
+    @RequestMapping("account/reSetPword")
+    public void reSetPword(HttpServletRequest request,HttpServletResponse response) throws IOException{
+   	   User user=findService.findUserForLogin(request.getParameter("account"));
+   	   String pword=NumConv.passwordMD5(request.getParameter("pword"));
+   	   boolean status=false;
+   	   String err="";
+   	   user.setPassword(pword);
+       status=alterService.alterUser(user);
+   		   if(!status){
+   			   err="存储故障";
+   		   }
+   	   JSONObject responseData=new JSONObject();
+   	   responseData.put("statusCode", status);
+   	   responseData.put("err", err);
+       response.setContentType("text/html");
+   	   response.setCharacterEncoding("utf-8");
+   	   PrintWriter out=response.getWriter();
+   	   out.println(responseData);
+   	   out.flush();
+   	   out.close();
+    }
 }

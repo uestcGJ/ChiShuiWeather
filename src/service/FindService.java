@@ -213,4 +213,5 @@ public interface FindService {
 	public List<Product> findLastProduct(Long id, String parameter);
 	public User findUserForLogin(String account);
 	public SystemInfo findSystemInfoById(long l);
+	public Object findWarnByDateAndStrategyId(String currentHourDate, long id);
 }

@@ -114,7 +114,7 @@ public class WeatherController {
 		responseData.put("statusCode", statusCode);
 		
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		//return as JSON
 		out.println(responseData);
@@ -187,7 +187,7 @@ public class WeatherController {
 		responseData.put("statusCode", statusCode);
 		
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		//return as JSON
 		out.println(responseData);
@@ -217,7 +217,7 @@ public class WeatherController {
 		}
 	    responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		//return as JSON
 		out.println(responseData);
@@ -282,7 +282,7 @@ public class WeatherController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		//return as JSON
 		out.println(responseData);
@@ -328,7 +328,7 @@ public class WeatherController {
 		}
 		responseData.put("statusCode", statusCode);
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
@@ -352,7 +352,7 @@ public class WeatherController {
 		JSONObject responseData=CallCimissApi.getHistoryStationWeatherInfo(request.getParameter("startTime"),
 								request.getParameter("endTime"),request.getParameter("item"));
 		/**send response*/
-		response.setContentType("text/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		out.println(responseData);
 		out.flush();
